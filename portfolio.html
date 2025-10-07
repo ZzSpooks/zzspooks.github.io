@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - SIO</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques pour le portfolio */
+        .portfolio-section {
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .portfolio-section h2 {
+            color: #00d9ff;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background: rgba(0, 217, 255, 0.05);
+            padding: 15px;
+            border: 2px solid #00d9ff;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+        }
+
+        .skill-item:hover {
+            background: rgba(0, 217, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .skill-item h3 {
+            color: #00d9ff;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: rgba(0, 217, 255, 0.05);
+            padding: 25px;
+            border: 2px solid #00d9ff;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+        }
+
+        .project-card:hover {
+            background: rgba(0, 217, 255, 0.1);
+            box-shadow: 0 0 25px rgba(0, 217, 255, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #00d9ff;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px #00d9ff;
+        }
+
+        .project-card p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background: rgba(0, 217, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #00d9ff;
+            border: 1px solid #00d9ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SIO</h1>
+    </header>
+
+    <div class="container">
+        <h1 id="mainTitle">Mon Portfolio</h1>
+        
+        <!-- Section À propos -->
+        <div class="content portfolio-section">
+            <h2>À propos de moi</h2>
+            <p class="about-text">
+                <!-- MODIFIEZ CE TEXTE -->
+                Bonjour, je suis étudiant en BTS SIO (Services Informatiques aux Organisations). 
+                Passionné par le développement web et les nouvelles technologies, je développe 
+                mes compétences en HTML, CSS, JavaScript et bien d'autres langages.
+            </p>
+            <p class="about-text">
+                <!-- MODIFIEZ CE TEXTE -->
+                Mon objectif est de devenir développeur web full-stack et de créer des 
+                applications innovantes et performantes.
+            </p>
+        </div>
+
+        <!-- Section Compétences -->
+        <div class="content portfolio-section">
+            <h2>Mes Compétences</h2>
+            <div class="skills-grid">
+                <!-- MODIFIEZ CES COMPÉTENCES -->
+                <div class="skill-item">
+                    <h3>HTML / CSS</h3>
+                    <p>Création de pages web responsives</p>
+                </div>
+                <div class="skill-item">
+                    <h3>JavaScript</h3>
+                    <p>Développement interactif</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Git / GitHub</h3>
+                    <p>Gestion de version</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Debian / Linux</h3>
+                    <p>Administration système</p>
+                </div>
+                <!-- AJOUTEZ D'AUTRES COMPÉTENCES ICI -->
+            </div>
+        </div>
+
+        <!-- Section Projets -->
+        <div class="content portfolio-section">
+            <h2>Mes Projets</h2>
+            <div class="projects-grid">
+                <!-- PROJET 1 - MODIFIEZ CE PROJET -->
+                <div class="project-card">
+                    <h3>Portfolio Personnel</h3>
+                    <p>
+                        Site web personnel avec effet néon et animations interactives. 
+                        Développé en HTML, CSS et JavaScript vanilla.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- PROJET 2 - MODIFIEZ CE PROJET -->
+                <div class="project-card">
+                    <h3>Application Web</h3>
+                    <p>
+                        Application de gestion développée dans le cadre de mes études. 
+                        Interface moderne et intuitive.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- PROJET 3 - MODIFIEZ OU SUPPRIMEZ CE PROJET -->
+                <div class="project-card">
+                    <h3>Site Vitrine</h3>
+                    <p>
+                        Site vitrine responsive pour une entreprise fictive. 
+                        Design moderne et épuré.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">Responsive</span>
+                    </div>
+                </div>
+
+                <!-- AJOUTEZ D'AUTRES PROJETS ICI EN COPIANT LA STRUCTURE CI-DESSUS -->
+            </div>
+        </div>
+
+        <!-- Boutons de navigation -->
+        <div class="nav-button-container" style="margin-top: 40px;">
+            <a href="index.html" class="neon-button nav-btn">Accueil</a>
+            <a href="contact.html" class="neon-button nav-btn">Me contacter</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

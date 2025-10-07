@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - SIO</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques pour le formulaire de contact */
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #00d9ff;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-shadow: 0 0 5px #00d9ff;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 217, 255, 0.05);
+            border: 2px solid #00d9ff;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Arial', sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: rgba(0, 217, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            margin-top: 20px;
+        }
+
+        #formMessage {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #formMessage.success {
+            display: block;
+            background: rgba(0, 255, 136, 0.1);
+            border: 2px solid #00ff88;
+            color: #00ff88;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SIO</h1>
+    </header>
+
+    <div class="container">
+        <h1 id="mainTitle">Contactez-moi</h1>
+        
+        <div class="content" style="max-width: 600px;">
+            <p>Remplissez ce formulaire pour me contacter. Je vous répondrai dans les plus brefs délais.</p>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nom complet *</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
+                </div>
+
+                <button type="submit" class="neon-button submit-btn">Envoyer le message</button>
+            </form>
+
+            <div id="formMessage"></div>
+        </div>
+
+        <div class="nav-button-container" style="margin-top: 30px;">
+            <a href="index.html" class="neon-button nav-btn">Retour à l'accueil</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Gestion du formulaire de contact
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Créer le lien mailto
+            const subject = encodeURIComponent('Contact depuis le portfolio');
+            const body = encodeURIComponent(
+                `Nom: ${name}\n` +
+                `Email: ${email}\n\n` +
+                `Message:\n${message}`
+            );
+            
+            // Ouvrir le client email
+            window.location.href = `mailto:votre.email@exemple.com?subject=${subject}&body=${body}`;
+            
+            // Afficher un message de confirmation
+            const formMessage = document.getElementById('formMessage');
+            formMessage.textContent = 'Votre client email va s\'ouvrir. Merci de votre message !';
+            formMessage.className = 'success';
+            
+            // Réinitialiser le formulaire après 2 secondes
+            setTimeout(() => {
+                document.getElementById('contactForm').reset();
+                formMessage.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
