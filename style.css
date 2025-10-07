@@ -177,3 +177,56 @@ header h1 {
         flex-direction: column;
     }
 }
+/* Bouton caché en bas à droite */
+.secret-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 217, 255, 0.1);
+    border: 2px solid rgba(0, 217, 255, 0.2);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.secret-button:hover {
+    opacity: 1;
+    background: rgba(0, 217, 255, 0.2);
+    border-color: #00d9ff;
+    box-shadow: 
+        0 0 20px rgba(0, 217, 255, 0.6),
+        0 0 40px rgba(0, 217, 255, 0.4);
+    transform: scale(1.2);
+}
+
+/* Animation subtile pour attirer l'attention */
+.secret-button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #00d9ff;
+    opacity: 0;
+    animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
