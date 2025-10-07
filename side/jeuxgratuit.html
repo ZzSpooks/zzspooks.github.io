@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeux Gratuits Epic Games</title>
+    <link rel="stylesheet" href="styleside.css">
+    <style>
+        .games-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .game-card {
+            background: rgba(255, 0, 64, 0.05);
+            border: 2px solid #ff0040;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 0, 64, 0.2);
+            cursor: pointer;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(255, 0, 64, 0.6);
+            border-color: #ff0040;
+        }
+
+        .game-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .game-image-container {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            background: #1a0a27;
+        }
+
+        .game-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .game-card:hover .game-image {
+            transform: scale(1.1);
+        }
+
+        .game-content {
+            padding: 20px;
+        }
+
+        .game-title {
+            color: #ff0040;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 5px #ff0040;
+            font-weight: bold;
+        }
+
+        .game-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 10px 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .game-status {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .status-free {
+            background: rgba(0, 255, 136, 0.2);
+            color: #00ff88;
+            border: 1px solid #00ff88;
+        }
+
+        .game-dates {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .loading {
+            text-align: center;
+            color: #ff0040;
+            font-size: 1.5rem;
+            margin: 50px 0;
+        }
+
+        .error {
+            background: rgba(255, 0, 64, 0.1);
+            border: 2px solid #ff0040;
+            padding: 20px;
+            border-radius: 10px;
+            color: #ff0040;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .last-update {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .no-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #1a0a27 0%, #270a1e 100%);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Epic Games Store</h1>
+    </header>
+
+    <div class="container">
+        <h1 id="mainTitle">🎮 Jeux Gratuits de la Semaine</h1>
+        
+        <div class="content">
+            <p>Découvrez les jeux gratuits actuellement disponibles sur l'Epic Games Store !</p>
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 10px;">
+                Cliquez sur une carte pour obtenir le jeu gratuitement
+            </p>
+        </div>
+
+        <div id="loading" class="loading">
+            ⏳ Chargement des jeux gratuits...
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+
+        <div id="games-list" class="games-container"></div>
+
+        <div id="last-update" class="last-update"></div>
+
+        <div class="nav-button-container" style="margin-top: 40px;">
+            <a href="indexside.html" class="neon-button nav-btn">Accueil</a>
+          </div>
+    </div>
+
+    <script src="scriptside.js"></script>
+    <script>
+        // API alternative gratuite
+        const API_URL = 'https://freeepicgames.pages.dev/api/latest';
+
+        async function fetchFreeGames() {
+            const loadingEl = document.getElementById('loading');
+            const errorEl = document.getElementById('error');
+            const gamesListEl = document.getElementById('games-list');
+            const lastUpdateEl = document.getElementById('last-update');
+
+            try {
+                const response = await fetch(API_URL);
+                
+                if (!response.ok) {
+                    throw new Error('Erreur lors du chargement des jeux');
+                }
+
+                const data = await response.json();
+                
+                loadingEl.style.display = 'none';
+
+                if (data && data.length > 0) {
+                    displayGames(data);
+                    lastUpdateEl.textContent = `Dernière mise à jour : ${new Date().toLocaleString('fr-FR')}`;
+                } else {
+                    throw new Error('Aucun jeu gratuit disponible actuellement');
+                }
+
+            } catch (error) {
+                loadingEl.style.display = 'none';
+                errorEl.style.display = 'block';
+                errorEl.innerHTML = `
+                    ❌ ${error.message}
+                    <br><br>
+                    <a href="https://store.epicgames.com/fr/free-games" target="_blank" class="neon-button" style="display: inline-block; margin-top: 15px;">
+                        Voir directement sur Epic Games Store
+                    </a>
+                `;
+                console.error('Erreur:', error);
+            }
+        }
+
+        function displayGames(games) {
+            const gamesListEl = document.getElementById('games-list');
+            gamesListEl.innerHTML = '';
+
+            games.forEach(game => {
+                const gameCard = document.createElement('div');
+                gameCard.className = 'game-card';
+
+                // Préparer l'URL du jeu
+                const gameUrl = game.url || `https://store.epicgames.com/fr/p/${game.urlSlug || ''}`;
+                
+                // Préparer l'image
+                const imageHtml = game.image 
+                    ? `<img src="${game.image}" alt="${game.title}" class="game-image" onerror="this.parentElement.innerHTML='<div class=\\'no-image\\'>🎮</div>'">`
+                    : `<div class="no-image">🎮</div>`;
+
+                // Formater les dates
+                const now = new Date();
+                const endDate = game.endDate ? new Date(game.endDate) : null;
+                const daysLeft = endDate ? Math.ceil((endDate - now) / (1000 * 60 * 60 * 24)) : null;
+
+                gameCard.innerHTML = `
+                    <a href="${gameUrl}" target="_blank" class="game-link">
+                        <div class="game-image-container">
+                            ${imageHtml}
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">${game.title}</h3>
+                            <span class="game-status status-free">✨ GRATUIT</span>
+                            ${game.description ? `<p class="game-description">${game.description}</p>` : ''}
+                            ${daysLeft !== null ? `
+                                <div class="game-dates">
+                                    ⏰ Encore ${daysLeft} jour${daysLeft > 1 ? 's' : ''}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </a>
+                `;
+
+                gamesListEl.appendChild(gameCard);
+            });
+        }
+
+        // Charger les jeux au chargement de la page
+        window.addEventListener('DOMContentLoaded', fetchFreeGames);
+
+        // Rafraîchir toutes les 10 minutes
+        setInterval(fetchFreeGames, 10 * 60 * 1000);
+    </script>
+</body>
+</html>
