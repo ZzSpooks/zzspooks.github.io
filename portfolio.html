@@ -31,6 +31,72 @@
             gap: 15px;
             margin-top: 20px;
         }
+        /* AJOUTE CE CODE ICI - Après .skills-grid */
+
+.portfolio-layout {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    align-items: start;  /* ✅ AJOUTE CETTE LIGNE pour aligner en haut */
+}
+
+.skills-section,
+.social-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    color: #00d9ff;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 200px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background: rgba(0, 217, 255, 0.05);
+    border: 2px solid #00d9ff;
+    border-radius: 10px;
+    color: #00d9ff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.2);
+}
+
+.social-btn:hover {
+    background: rgba(0, 217, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+    transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+    .portfolio-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-links {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+
 
         .skill-item {
             background: rgba(0, 217, 255, 0.05);
@@ -126,13 +192,17 @@
         </div>
 
         <!-- Section Compétences -->
-        <div class="content portfolio-section">
-            <h2>Mes Compétences</h2>
+       <!-- Section Compétences -->
+<!-- Section Compétences -->
+<div class="content portfolio-section"> 
+    <div class="portfolio-layout">
+        <!-- Colonne gauche : Compétences -->
+        <div class="skills-section">
+            <h3 class="section-title">Mes compétences</h3>
             <div class="skills-grid">
-                <!-- MODIFIEZ CES COMPÉTENCES -->
                 <div class="skill-item">
                     <h3>HTML / CSS</h3>
-                    <p>Création de pages web</p>
+                    <p>Création de pages web responsives</p>
                 </div>
                 <div class="skill-item">
                     <h3>JavaScript</h3>
@@ -150,9 +220,28 @@
                     <h3>Unreal Engine 5</h3>
                     <p>Développement de Jeux</p>
                 </div>
-                <!-- c'est la pour rajouté des compétences au cas ou j'oublie -->
             </div>
         </div>
+        
+        <!-- Colonne droite : Réseaux sociaux -->
+        <div class="social-section">
+            <h3 class="section-title">Retrouvez moi sur</h3>
+            <div class="social-links">
+                <a href="https://github.com/zzspooks" target="_blank" class="social-btn">
+                    <span>🐙</span> GitHub
+                </a>
+                <a href="https://linkedin.com/in/mathisgomes" target="_blank" class="social-btn">
+                    <span>💼</span> LinkedIn
+                </a>
+                <a href="https://twitch.tv/zzspooks" target="_blank" class="social-btn">
+                    <span>🎮</span> Twitch
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
         <!-- Section Projets -->
         <div class="content portfolio-section">
