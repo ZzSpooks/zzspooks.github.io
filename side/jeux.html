@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeux sur Navigateur</title>
+    <link rel="stylesheet" href="styleside.css">
+    <style>
+        .category-section {
+            margin: 40px 0;
+        }
+
+        .category-title {
+            color: #ff0040;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #ff0040, 0 0 20px #ff0040;
+            border-bottom: 2px solid #ff0040;
+            padding-bottom: 10px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .game-item {
+            background: rgba(255, 0, 64, 0.05);
+            border: 2px solid #ff0040;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 0, 64, 0.2);
+            text-align: center;
+        }
+
+        .game-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px rgba(255, 0, 64, 0.5);
+            border-color: #ff0040;
+        }
+
+        .game-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .game-name {
+            color: #ff0040;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 0 0 5px #ff0040;
+        }
+
+        .game-desc {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .game-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(255, 0, 64, 0.1);
+            border: 2px solid #ff0040;
+            color: #ff0040;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .game-link:hover {
+            background: rgba(255, 0, 64, 0.2);
+            box-shadow: 0 0 15px rgba(255, 0, 64, 0.5);
+        }
+
+        .search-box {
+            margin: 30px 0;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 600px;
+            padding: 15px;
+            background: rgba(255, 0, 64, 0.05);
+            border: 2px solid #ff0040;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            box-shadow: 0 0 10px rgba(255, 0, 64, 0.2);
+        }
+
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 0 20px rgba(255, 0, 64, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jeux Navigateur</h1>
+    </header>
+
+    <div class="container">
+        <h1 id="mainTitle">🎮 Jeux Gratuits sur Navigateur</h1>
+        
+        <div class="content">
+            <p>Découvre une sélection de jeux gratuits à jouer directement dans ton navigateur, sans téléchargement !</p>
+        </div>
+
+        <div class="search-box">
+            <input type="text" 
+                   id="searchInput" 
+                   class="search-input" 
+                   placeholder="🔍 Rechercher un jeu..."
+                   onkeyup="filterGames()">
+        </div>
+
+        <!-- CATÉGORIE: ACTION -->
+        <div class="category-section">
+            <h2 class="category-title">⚔️ Action & Combat</h2>
+            <div class="games-grid">
+                
+                <div class="game-item" data-name="krunker.io">
+                    <span class="game-icon">🎯</span>
+                    <div class="game-name">Krunker.io</div>
+                    <p class="game-desc">FPS multijoueur rapide avec des graphismes pixelisés rétro</p>
+                    <a href="https://krunker.io" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+                <div class="game-item" data-name="shellshock.io">
+                    <span class="game-icon">🥚</span>
+                    <div class="game-name">Shell Shockers</div>
+                    <p class="game-desc">FPS où tu incarnes un œuf armé jusqu'aux dents</p>
+                    <a href="https://shellshock.io" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+                <div class="game-item" data-name="venge.io">
+                    <span class="game-icon">🔫</span>
+                    <div class="game-name">Venge.io</div>
+                    <p class="game-desc">FPS compétitif avec des cartes variées</p>
+                    <a href="https://venge.io" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CATÉGORIE: IO GAMES -->
+        <div class="category-section">
+            <h2 class="category-title">🌐 Jeux .io Multijoueurs</h2>
+            <div class="games-grid">
+                
+                <div class="game-item" data-name="agar.io">
+                    <span class="game-icon">⚪</span>
+                    <div class="game-name">Agar.io</div>
+                    <p class="game-desc">Mange les autres cellules pour devenir le plus gros</p>
+                    <a href="https://agar.io" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+                <div class="game-item" data-name="slither.io">
+                    <span class="game-icon">🐍</span>
+                    <div class="game-name">Slither.io</div>
+                    <p class="game-desc">Serpent multijoueur, deviens le plus grand</p>
+                    <a href="https://slither.io" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+                <div class="game-item" data-name="diep.io">
+                    <span class="game-icon">🔺</span>
+                    <div class="game-name">Diep.io</div>
+                    <p class="game-desc">Tank shooter avec amélioration de compétences</p>
+                    <a href="https://diep.io" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+                <div class="game-item" data-name="zombs royale">
+                    <span class="game-icon">💀</span>
+                    <div class="game-name">Zombs Royale</div>
+                    <p class="game-desc">Battle royale 2D avec 100 joueurs</p>
+                    <a href="https://zombsroyale.io" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CATÉGORIE: PUZZLE -->
+        <div class="category-section">
+            <h2 class="category-title">🧩 Puzzle & Réflexion</h2>
+            <div class="games-grid">
+                
+                <div class="game-item" data-name="2048">
+                    <span class="game-icon">🔢</span>
+                    <div class="game-name">2048</div>
+                    <p class="game-desc">Combine les tuiles pour atteindre 2048</p>
+                    <a href="https://play2048.co" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+                <div class="game-item" data-name="wordle">
+                    <span class="game-icon">📝</span>
+                    <div class="game-name">Wordle</div>
+                    <p class="game-desc">Devine le mot de 5 lettres en 6 essais</p>
+                    <a href="https://wordlegame.org/fr" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+                <div class="game-item" data-name="chess">
+                    <span class="game-icon">♟️</span>
+                    <div class="game-name">Chess.com</div>
+                    <p class="game-desc">Échecs en ligne contre des joueurs du monde entier</p>
+                    <a href="https://www.chess.com/play/online" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+                <div class="game-item" data-name="sudoku">
+                    <span class="game-icon">🔢</span>
+                    <div class="game-name">Sudoku</div>
+                    <p class="game-desc">Puzzle de chiffres classique</p>
+                    <a href="https://sudoku.com/fr" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CATÉGORIE: ARCADE -->
+        <div class="category-section">
+            <h2 class="category-title">🕹️ Arcade & Casual</h2>
+            <div class="games-grid">
+                
+                <div class="game-item" data-name="subway surfers">
+                    <span class="game-icon">🏃</span>
+                    <div class="game-name">Subway Surfers</div>
+                    <p class="game-desc">Cours sans fin sur les rails du métro</p>
+                    <a href="https://poki.com/fr/g/subway-surfers" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+                <div class="game-item" data-name="temple run">
+                    <span class="game-icon">🏃‍♂️</span>
+                    <div class="game-name">Temple Run 2</div>
+                    <p class="game-desc">Fuis les singes dans le temple maudit</p>
+                    <a href="https://poki.com/fr/g/temple-run-2" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+                <div class="game-item" data-name="geometry dash">
+                    <span class="game-icon">🔷</span>
+                    <div class="game-name">Geometry Dash</div>
+                    <p class="game-desc">Plateforme rythmique ultra difficile</p>
+                    <a href="https://poki.com/fr/g/geometry-dash" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+                <div class="game-item" data-name="flappy bird">
+                    <span class="game-icon">🐦</span>
+                    <div class="game-name">Flappy Bird</div>
+                    <p class="game-desc">Fais voler l'oiseau entre les tuyaux</p>
+                    <a href="https://flappybird.io" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CATÉGORIE: STRATÉGIE -->
+        <div class="category-section">
+            <h2 class="category-title">🎯 Stratégie & Gestion</h2>
+            <div class="games-grid">
+                
+                <div class="game-item" data-name="bloons td">
+                    <span class="game-icon">🎈</span>
+                    <div class="game-name">Bloons TD</div>
+                    <p class="game-desc">Tower defense avec des singes contre des ballons</p>
+                    <a href="https://www.crazygames.com/game/bloons-td" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+                <div class="game-item" data-name="little alchemy">
+                    <span class="game-icon">⚗️</span>
+                    <div class="game-name">Little Alchemy 2</div>
+                    <p class="game-desc">Combine des éléments pour créer de nouveaux objets</p>
+                    <a href="https://littlealchemy2.com" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+                <div class="game-item" data-name="cookie clicker">
+                    <span class="game-icon">🍪</span>
+                    <div class="game-name">Cookie Clicker</div>
+                    <p class="game-desc">Clique sur des cookies pour devenir milliardaire</p>
+                    <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank" class="game-link">Jouer</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="nav-button-container" style="margin-top: 50px;">
+            <a href="indexside.html" class="neon-button nav-btn">Accueil</a>
+        </div>
+    </div>
+
+    <script src="scriptside.js"></script>
+    <script>
+        function filterGames() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const gameItems = document.querySelectorAll('.game-item');
+
+            gameItems.forEach(item => {
+                const gameName = item.getAttribute('data-name').toLowerCase();
+                const gameTitle = item.querySelector('.game-name').textContent.toLowerCase();
+                const gameDesc = item.querySelector('.game-desc').textContent.toLowerCase();
+                
+                if (gameName.includes(searchInput) || 
+                    gameTitle.includes(searchInput) || 
+                    gameDesc.includes(searchInput)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
