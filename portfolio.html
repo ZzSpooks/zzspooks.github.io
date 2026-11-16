@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+     <link rel="icon" type="jpeg" href="icone.jpg">
     <style>
-        /* Styles spécifiques pour le portfolio */
         .portfolio-section {
             margin: 40px 0;
             text-align: left;
@@ -31,13 +31,12 @@
             gap: 15px;
             margin-top: 20px;
         }
-        /* AJOUTE CE CODE ICI - Après .skills-grid */
 
 .portfolio-layout {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 30px;
-    align-items: start;  /* ✅ AJOUTE CETTE LIGNE pour aligner en haut */
+    align-items: start; 
 }
 
 .skills-section,
@@ -182,21 +181,31 @@
         <div class="content portfolio-section">
             <h2>À propos de moi</h2>
             <p class="about-text">
-                Bonjour, je suis étudiant en BTS SIO (Services Informatiques aux Organisations). 
+                Bonjour, je m'appelle Mathis Gomes, j'ai 19 ans et je suis étudiant en BTS SIO (Services Informatiques aux Organisations). 
                 Passionné par le développement et les nouvelles technologies, je développe 
-                mes compétences en HTML, CSS, JavaScript et +.
+                mes compétences en language Web, Bases de données et API.
             </p>
             <p class="about-text">
                 Mon objectif est de devenir développeur de jeux vidéos ou d'applications.
             </p>
         </div>
 
-        <!-- Section Compétences -->
-       <!-- Section Compétences -->
-<!-- Section Compétences -->
+        <div class="content portfolio-section">
+            <h2>Mes Formations et Dîplomes</h2>
+            <p class="about-text">
+                Formation :<br>
+                Brevet de Technicien Supérieur en Services Informatiques aux Organisations (En cours) | 2025-2027 <br>
+                Baccalauréat Professionel Système Numérique | 2022-2025
+            </p>
+            <p class="about-text">
+                Dîplomes :<br>
+                Bac Pro SN (Mention Bien) | 2025<br>
+                Brevet des Collège | 2022
+            </p>
+        </div>
+
 <div class="content portfolio-section"> 
     <div class="portfolio-layout">
-        <!-- Colonne gauche : Compétences -->
         <div class="skills-section">
             <h3 class="section-title">Mes compétences</h3>
             <div class="skills-grid">
@@ -209,6 +218,14 @@
                     <p>Développement interactif</p>
                 </div>
                 <div class="skill-item">
+                    <h3>PHP</h3>
+                    <p>Développement de sites web dynamiques</p>
+                </div>
+                <div class="skill-item">
+                    <h3>SQL</h3>
+                    <p>Conception et gestion de bases de données</p>
+                </div>
+                <div class="skill-item">
                     <h3>Git / GitHub</h3>
                     <p>Gestion de version</p>
                 </div>
@@ -217,13 +234,40 @@
                     <p>Administration système</p>
                 </div>
                 <div class="skill-item">
+                    <h3>Windows Server</h3>
+                    <p>Administration système</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Gestion de Projet</h3>
+                    <p>Planification et coordination avec Azure DevOps</p>
+                </div>
+                <div class="skill-item">
+                    <h3>VirtualBox / Proxmox</h3>
+                    <p>Virtualisation</p>
+                </div>
+                <div class="skill-item">
                     <h3>Unreal Engine 5</h3>
                     <p>Développement de Jeux</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Celery</h3>
+                    <p>Automatisation des tâches</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Basic</h3>
+                    <p>Langage de programmation</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Django</h3>
+                    <p>Framework web Python</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Développement Industriel</h3>
+                    <p>Conception et développement d'applications pour l'industrie (Modbus TCP, SQL Server, Windows SMB)</p>
                 </div>
             </div>
         </div>
         
-        <!-- Colonne droite : Réseaux sociaux -->
         <div class="social-section">
             <h3 class="section-title">Retrouvez moi sur</h3>
             <div class="social-links">
@@ -241,13 +285,9 @@
     </div>
 </div>
 
-
-
-        <!-- Section Projets -->
         <div class="content portfolio-section">
             <h2>Mes Projets</h2>
             <div class="projects-grid">
-                <!-- PROJET 1 - MODIFIEZ CE PROJET -->
                 <div class="project-card">
                     <h3>Site Personnel</h3>
                     <p>
@@ -269,6 +309,9 @@
             <a href="index.html" class="neon-button nav-btn">Accueil</a>
             <a href="cv.html" class="neon-button nav-btn">CV</a>
             <a href="contact.html" class="neon-button nav-btn">Contact</a>
+            <a href="experience.html" class="neon-button nav-btn">Expérience</a>
+            <a href="veille.html" class="neon-button nav-btn">Veille</a>
+
         </div>
     </div>
 
