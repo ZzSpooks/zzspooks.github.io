@@ -3,43 +3,828 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="CEjdeDxpo77LMmSzx4ou8gYqLO5wdv1t2XtyZh4OZ_k" />
+    <meta name="google-site-verification" content="CEjdeDxpo77LMmSzx4ou8gYqLO5wdv1t2XtyZh4OZ_k">
+    <meta name="description" content="Portfolio de Mathis Gomes — Étudiant en 2e année de BTS SIO option SLAM à Dijon, futur développeur logiciel et programmeur de jeux vidéo. Projets, stage AstreaPharma, veille CNIL et CV.">
+    <meta name="theme-color" content="#06080d">
+
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NFVK3M32');</script>
-<!-- End Google Tag Manager -->
-    <meta name="description" content="Découvrez le portfolio professionnel de Mathis GOMES, étudiant en BTS SIO (Services Informatiques aux Organisations). Explorez dès maintenant l'ensemble de mes projets techniques, mes fiches de compétences, ma veille technologique ainsi que mon CV complet pour de futures collaborations.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="jpeg" href="icone.jpg">
-    <title>Portfolio BTS SIO - Mathis GOMES</title>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NFVK3M32');</script>
+    <!-- End Google Tag Manager -->
+
+    <title>Mathis Gomes — Développeur Full-Stack &amp; BTS SIO SLAM</title>
+    <link rel="icon" type="image/jpeg" href="assets/img/icone.jpg">
+
+    <!-- Polices modernes : Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles modulaires -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/modals.css">
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFVK3M32"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <header>
-        <h1>Mathis GOMES</h1>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFVK3M32"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <div class="bg-atmosphere" aria-hidden="true"></div>
+    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Navigation Sticky -->
+    <header id="site-header" class="site-header">
+        <nav class="container navbar" aria-label="Navigation principale">
+            <a href="#accueil" class="brand">
+                <img src="assets/img/icone.jpg" alt="Avatar Mathis Gomes" class="brand-avatar" width="34" height="34">
+                <span>mathis<span class="brand-slash">.</span>gomes</span>
+            </a>
+
+            <button
+                id="nav-toggle"
+                class="nav-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="nav-links"
+                aria-label="Ouvrir le menu de navigation"
+            >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <ul id="nav-links" class="nav-links">
+                <li><a href="#accueil" class="nav-link is-active" data-section="accueil">Accueil</a></li>
+                <li><a href="#apropos" class="nav-link" data-section="apropos">À propos</a></li>
+                <li><a href="#projets" class="nav-link" data-section="projets">Projets</a></li>
+                <li><a href="#experience" class="nav-link" data-section="experience">Expérience</a></li>
+                <li><a href="#veille" class="nav-link" data-section="veille">Veille CNIL</a></li>
+                <li><a href="#cv" class="nav-link" data-section="cv">CV</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="container">
-        <h2 id="mainTitle">Bienvenue sur ma page !</h2>
-        
-        <div class="content" id="mainContent">
-            <p id="mainText">Cliquez sur les boutons ci-dessous pour changer de page !</p>
-        </div>
-        <div class="nav-button-container">
-            <a href="portfolio.html" class="neon-button nav-btn">Portfolio</a>
-            <a href="cv.html" class="neon-button nav-btn">CV</a>
-            <a href="contact.html" class="neon-button nav-btn">Contact</a>
-            <a href="experience.html" class="neon-button nav-btn">Expérience</a>
-            <a href="veille.html" class="neon-button nav-btn">Veille</a>
+    <main id="main-content">
+        <!-- 1. HERO SECTION -->
+        <section id="accueil" class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content reveal">
+                    <div class="status-pill">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        <span>Recherche de stage · 1er février au 19 mars 2027</span>
+                    </div>
 
+                    <h1 class="hero-title">
+                        Mathis <span class="text-accent">Gomes</span>
+                    </h1>
+
+                    <p class="hero-role">
+                        &gt; Développeur Full-Stack · Étudiant BTS SIO SLAM
+                    </p>
+
+                    <p class="hero-lead">
+                        Étudiant en 2<sup>e</sup> année de BTS SIO option SLAM à Dijon et titulaire d’un Bac Pro Systèmes Numériques.
+                        Je conçois des applications web robustes, des outils d’automatisation industrielle et des systèmes interactifs,
+                        avec l’ambition de devenir développeur logiciel et programmeur de jeux vidéo.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#projets" class="btn btn-primary">
+                            <span>Voir mes projets</span>
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+
+                        <a href="assets/docs/CV_Mathis_Gomes.pdf" download="CV_Mathis_Gomes.pdf" class="btn btn-secondary">
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <span>Télécharger mon CV</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-meta">
+                        <span class="hero-meta-item">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Dijon, France
+                        </span>
+                        <span class="hero-meta-item">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                            BTS SIO SLAM (2025 – 2027)
+                        </span>
+                        <span class="hero-meta-item">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                                <line x1="6" y1="12" x2="10" y2="12"></line>
+                                <line x1="8" y1="10" x2="8" y2="14"></line>
+                                <circle cx="16" cy="11" r="1"></circle>
+                                <circle cx="18" cy="13" r="1"></circle>
+                            </svg>
+                            Objectif : Dev Logiciel / Jeux Vidéo
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Panneau Terminal Profil -->
+                <aside class="terminal-card reveal" aria-label="Fiche technique du développeur">
+                    <div class="terminal-bar">
+                        <div class="terminal-dots" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span class="terminal-title">mathis.profile.ts</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="code-line"><span class="code-num">01</span><span><span class="tok-kw">const</span> <span class="tok-key">developer</span> = {</span></div>
+                        <div class="code-line"><span class="code-num">02</span><span>&nbsp;&nbsp;name: <span class="tok-str">"Mathis Gomes"</span>,</span></div>
+                        <div class="code-line"><span class="code-num">03</span><span>&nbsp;&nbsp;location: <span class="tok-str">"Dijon, FR"</span>,</span></div>
+                        <div class="code-line"><span class="code-num">04</span><span>&nbsp;&nbsp;education: <span class="tok-str">"BTS SIO SLAM (2e année)"</span>,</span></div>
+                        <div class="code-line"><span class="code-num">05</span><span>&nbsp;&nbsp;background: <span class="tok-str">"Bac Pro SN (Mention Bien)"</span>,</span></div>
+                        <div class="code-line"><span class="code-num">06</span><span>&nbsp;&nbsp;goal: [</span></div>
+                        <div class="code-line"><span class="code-num">07</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"Développeur Logiciel"</span>,</span></div>
+                        <div class="code-line"><span class="code-num">08</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tok-str">"Programmeur Jeux Vidéo"</span></span></div>
+                        <div class="code-line"><span class="code-num">09</span><span>&nbsp;&nbsp;],</span></div>
+                        <div class="code-line"><span class="code-num">10</span><span>&nbsp;&nbsp;engines: [<span class="tok-str">"Unreal Engine 5"</span>, <span class="tok-str">"Roblox Studio"</span>],</span></div>
+                        <div class="code-line"><span class="code-num">11</span><span>&nbsp;&nbsp;internshipWindow: {</span></div>
+                        <div class="code-line"><span class="code-num">12</span><span>&nbsp;&nbsp;&nbsp;&nbsp;from: <span class="tok-str">"2027-02-01"</span>,</span></div>
+                        <div class="code-line"><span class="code-num">13</span><span>&nbsp;&nbsp;&nbsp;&nbsp;to: <span class="tok-str">"2027-03-19"</span></span></div>
+                        <div class="code-line"><span class="code-num">14</span><span>&nbsp;&nbsp;}</span></div>
+                        <div class="code-line"><span class="code-num">15</span><span>};<span class="terminal-cursor" aria-hidden="true"></span></span></div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- 2. À PROPOS & COMPÉTENCES -->
+        <section id="apropos" class="section section-alt">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-eyebrow">01 // À propos &amp; Stack Technique</span>
+                    <h2 class="section-title">Parcours &amp; Compétences</h2>
+                    <p class="section-desc">
+                        Un socle technique forgé entre systèmes numériques, développement applicatif full-stack,
+                        bases de données relationnelles/NoSQL et ingénierie logicielle.
+                    </p>
+                </header>
+
+                <div class="about-layout">
+                    <article class="tech-card reveal">
+                        <span class="project-index">PARCOURS ACADÉMIQUE</span>
+                        <div class="timeline-list">
+                            <div class="timeline-item">
+                                <span class="timeline-date">2025 – 2027 (2e année en cours)</span>
+                                <h3 class="timeline-title">BTS SIO — Option SLAM</h3>
+                                <p class="timeline-place">
+                                    Solutions Logicielles et Applications Métier · Lycée Saint-Bénigne, Dijon
+                                </p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-date">2022 – 2025 · Mention Bien</span>
+                                <h3 class="timeline-title">Bac Pro Systèmes Numériques</h3>
+                                <p class="timeline-place">
+                                    Réseaux, systèmes informatiques et maintenance · Lycée Professionnel Saint-Joseph, Dijon
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tech-card reveal">
+                        <span class="project-index">VISION &amp; APPROCHE</span>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 12px;">Du bas niveau matériel aux architectures logicielles</h3>
+                        <p style="margin-bottom: 14px;">
+                            Mon parcours en Bac Pro Systèmes Numériques m’a donné une compréhension concrète de l’infrastructure,
+                            des réseaux et des environnements Linux/Windows Server.
+                        </p>
+                        <p>
+                            En BTS SIO SLAM, j’approfondis la conception logicielle orientée objet, les architectures multi-bases
+                            de données et les frameworks back-end/front-end modernes, tout en développant ma pratique sur
+                            <strong>Unreal Engine 5</strong> et la programmation de mécaniques de jeu vidéo.
+                        </p>
+                    </article>
+                </div>
+
+                <!-- Grille de compétences catégorisée -->
+                <div class="skills-categories">
+                    <article class="tech-card reveal">
+                        <div class="skill-card-head">
+                            <div class="skill-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                            </div>
+                            <h3>Langages &amp; Web</h3>
+                        </div>
+                        <ul class="skill-tags">
+                            <li class="skill-pill">PHP (8.3+)</li>
+                            <li class="skill-pill">Laravel</li>
+                            <li class="skill-pill">Python</li>
+                            <li class="skill-pill">C#</li>
+                            <li class="skill-pill">JavaScript</li>
+                            <li class="skill-pill">HTML / CSS</li>
+                        </ul>
+                    </article>
+
+                    <article class="tech-card reveal">
+                        <div class="skill-card-head">
+                            <div class="skill-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                </svg>
+                            </div>
+                            <h3>Bases de données</h3>
+                        </div>
+                        <ul class="skill-tags">
+                            <li class="skill-pill">PostgreSQL</li>
+                            <li class="skill-pill">MySQL</li>
+                            <li class="skill-pill">SQL Server</li>
+                            <li class="skill-pill">SQLite</li>
+                            <li class="skill-pill">MongoDB</li>
+                        </ul>
+                    </article>
+
+                    <article class="tech-card reveal">
+                        <div class="skill-card-head">
+                            <div class="skill-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                            <h3>Outils &amp; Environnements</h3>
+                        </div>
+                        <ul class="skill-tags">
+                            <li class="skill-pill">Git</li>
+                            <li class="skill-pill">Azure DevOps</li>
+                            <li class="skill-pill">Docker</li>
+                            <li class="skill-pill">Linux (Debian / Ubuntu)</li>
+                            <li class="skill-pill">Windows Server</li>
+                        </ul>
+                    </article>
+
+                    <article class="tech-card reveal">
+                        <div class="skill-card-head">
+                            <div class="skill-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                                    <line x1="6" y1="12" x2="10" y2="12"></line>
+                                    <line x1="8" y1="10" x2="8" y2="14"></line>
+                                    <circle cx="16" cy="11" r="1"></circle>
+                                    <circle cx="18" cy="13" r="1"></circle>
+                                </svg>
+                            </div>
+                            <h3>Jeux Vidéo &amp; Moteurs</h3>
+                        </div>
+                        <ul class="skill-tags">
+                            <li class="skill-pill">Unreal Engine 5</li>
+                            <li class="skill-pill">Roblox Studio</li>
+                            <li class="skill-pill">Luau</li>
+                            <li class="skill-pill">Game Design</li>
+                            <li class="skill-pill">Programmation Gameplay</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. PROJETS MAJEURS -->
+        <section id="projets" class="section">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-eyebrow">02 // Réalisations</span>
+                    <h2 class="section-title">Projets Majeurs</h2>
+                    <p class="section-desc">
+                        Une sélection de projets alliant architecture multi-bases de données, game design
+                        et administration d’infrastructures auto-hébergées.
+                    </p>
+                </header>
+
+                <div class="projects-grid">
+                    <!-- Projet 1 : Blindtest Musical -->
+                    <article class="tech-card project-card reveal">
+                        <div>
+                            <div class="project-index">
+                                <span>PROJET // 01</span>
+                                <span>WEB &amp; MULTI-SGBD</span>
+                            </div>
+                            <h3>Application de Blindtest Musical</h3>
+                            <p>
+                                Application web interactive de quiz musical reposant sur une architecture multi-bases
+                                de données spécialisées selon le type de données manipulées.
+                            </p>
+                            <ul class="project-highlights">
+                                <li><strong>PostgreSQL :</strong> gestion des comptes joueurs, authentification et profils.</li>
+                                <li><strong>SQL Server :</strong> stockage et requêtage du catalogue musical.</li>
+                                <li><strong>MySQL :</strong> journalisation et traçabilité des logs applicatifs.</li>
+                            </ul>
+                        </div>
+                        <div class="tag-row">
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">SQL Server</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Web Full-Stack</span>
+                        </div>
+                    </article>
+
+                    <!-- Projet 2 : Jeu Roblox -->
+                    <article class="tech-card project-card reveal">
+                        <div>
+                            <div class="project-index">
+                                <span>PROJET // 02</span>
+                                <span>GAME DEV</span>
+                            </div>
+                            <h3>Développement d’un jeu sur Roblox</h3>
+                            <p>
+                                Conception complète d’une boucle de gameplay orientée progression, économie interne
+                                et mécaniques de collection.
+                            </p>
+                            <ul class="project-highlights">
+                                <li>Système de rareté probabiliste et ouverture de <strong>lootboxes</strong>.</li>
+                                <li>Déblocage progressif de <strong>zones par niveau</strong> et gestion d’inventaire.</li>
+                                <li>Intégration des mécaniques de <strong>monétisation</strong> et équilibrage.</li>
+                            </ul>
+                        </div>
+                        <div class="tag-row">
+                            <span class="tech-tag">Roblox Studio</span>
+                            <span class="tech-tag">Luau</span>
+                            <span class="tech-tag">Game Design</span>
+                            <span class="tech-tag">Économie &amp; Lootboxes</span>
+                        </div>
+                    </article>
+
+                    <!-- Projet 3 : Infra & Serveurs -->
+                    <article class="tech-card project-card reveal">
+                        <div>
+                            <div class="project-index">
+                                <span>PROJET // 03</span>
+                                <span>INFRA &amp; SYSTÈMES</span>
+                            </div>
+                            <h3>Infrastructure &amp; Hébergement de Serveurs</h3>
+                            <p>
+                                Déploiement, sécurisation et maintenance continue d’une infrastructure personnelle
+                                dédiée à l’hébergement de services applicatifs et multimédias.
+                            </p>
+                            <ul class="project-highlights">
+                                <li>Administration d’un serveur <strong>Minecraft moddé</strong> (optimisation JVM, mods, sauvegardes).</li>
+                                <li>Déploiement d’un serveur média <strong>Jellyfin</strong> avec gestion des accès.</li>
+                                <li>Configuration <strong>réseau</strong>, pare-feu, routage de ports et supervision Linux.</li>
+                            </ul>
+                        </div>
+                        <div class="tag-row">
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">Réseau</span>
+                            <span class="tech-tag">Jellyfin</span>
+                            <span class="tech-tag">Minecraft Moddé</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. EXPÉRIENCE PROFESSIONNELLE -->
+        <section id="experience" class="section section-alt">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-eyebrow">03 // Parcours Professionnel</span>
+                    <h2 class="section-title">Expériences &amp; Stage</h2>
+                    <p class="section-desc">
+                        Mise en application de mes compétences en environnement industriel et applicatif,
+                        à l’interface entre l’IT et les systèmes de production (OT).
+                    </p>
+                </header>
+
+                <div class="experience-stack">
+                    <!-- Stage principal : AstreaPharma -->
+                    <article class="tech-card experience-featured reveal">
+                        <div class="exp-header">
+                            <div>
+                                <div class="exp-company">
+                                    <span>ASTREAPHARMA</span>
+                                    <span>·</span>
+                                    <span>STAGE DE 1RE ANNÉE BTS SIO</span>
+                                </div>
+                                <h3 class="exp-role">Développeur d’Outils Industriels &amp; Intégrateur IT/OT</h3>
+                            </div>
+                            <span class="exp-period">Mai – Juin 2026</span>
+                        </div>
+
+                        <div class="exp-missions">
+                            <div class="mission-box">
+                                <h4><span>01.</span> Collecte automatisée de données industrielles</h4>
+                                <p>
+                                    Conception et développement d’outils de supervision et d’acquisition temps réel
+                                    communiquant en <strong>Modbus TCP</strong> via <strong>Python</strong> (<code class="code-inline">pymodbus</code>),
+                                    avec persistance dans <strong>SQL Server</strong> et génération structurée de logs
+                                    <strong>CSV</strong> (<code class="code-inline">seavision.py</code> / <code class="code-inline">modbusreader</code>).
+                                </p>
+                            </div>
+
+                            <div class="mission-box">
+                                <h4><span>02.</span> Migration d’impression d’étiquettes industrielles</h4>
+                                <p>
+                                    Analyse, adaptation et migration complète de programmes d’impression d’étiquettes
+                                    depuis des imprimantes <strong>Intermec PM4i</strong> (langage <strong>Fingerprint</strong>)
+                                    vers la nouvelle génération d’imprimantes industrielles <strong>Intermec PD43</strong>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="tag-row">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">pymodbus</span>
+                            <span class="tech-tag">Modbus TCP</span>
+                            <span class="tech-tag">SQL Server</span>
+                            <span class="tech-tag">Logs CSV</span>
+                            <span class="tech-tag">Intermec Fingerprint</span>
+                            <span class="tech-tag">PM4i → PD43</span>
+                        </div>
+                    </article>
+
+                    <!-- Expériences complémentaires (Bac Pro SN) -->
+                    <div class="sub-experience-grid">
+                        <article class="tech-card reveal">
+                            <div class="project-index">
+                                <span>STAGE // MOONZ</span>
+                                <span>2024 – 2025</span>
+                            </div>
+                            <h3 style="font-size: 1.12rem; margin-bottom: 8px;">Stagiaire Développement Web &amp; Mobile</h3>
+                            <p style="font-size: 0.92rem; margin-bottom: 14px;">
+                                Contribution back-end et front-end sur une application mobile, prototypage d’interfaces
+                                sous Figma et manipulation de bases de données.
+                            </p>
+                            <div class="tag-row">
+                                <span class="tech-tag">Front-end / Back-end</span>
+                                <span class="tech-tag">Figma</span>
+                                <span class="tech-tag">SQL</span>
+                            </div>
+                        </article>
+
+                        <article class="tech-card reveal">
+                            <div class="project-index">
+                                <span>STAGE // DSI</span>
+                                <span>2023 – 2024</span>
+                            </div>
+                            <h3 style="font-size: 1.12rem; margin-bottom: 8px;">Technicien Systèmes &amp; Support IT</h3>
+                            <p style="font-size: 0.92rem; margin-bottom: 14px;">
+                                Maintenance matérielle, création d’images ISO Windows personnalisées, configuration de NAS
+                                et dépannage de périphériques réseau.
+                            </p>
+                            <div class="tag-row">
+                                <span class="tech-tag">Windows ISO</span>
+                                <span class="tech-tag">NAS</span>
+                                <span class="tech-tag">Support &amp; Réseau</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. VEILLE TECHNOLOGIQUE (AUTOMATISATION RSS CNIL) -->
+        <section id="veille" class="section">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-eyebrow">04 // Cybersécurité &amp; RGPD</span>
+                    <h2 class="section-title">Veille Technologique — Flux CNIL</h2>
+                    <p class="section-desc">
+                        Suivi automatisé des actualités de la <strong>CNIL</strong> concernant la cybersécurité,
+                        la conformité RGPD et la protection des données personnelles.
+                    </p>
+                </header>
+
+                <div class="veille-toolbar reveal">
+                    <div class="veille-status">
+                        <span class="cnil-badge">RSS · CNIL</span>
+                        <span id="veille-status-text">Initialisation du flux...</span>
+                    </div>
+                    <button id="veille-refresh-btn" type="button" class="btn btn-ghost">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="23 4 23 10 17 10"></polyline>
+                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                        </svg>
+                        <span>Actualiser</span>
+                    </button>
+                </div>
+
+                <!-- Conteneur dynamique alimenté par js/veille-cnil.js -->
+                <div id="veille-grid" class="veille-grid" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- 6. SECTION CV -->
+        <section id="cv" class="section section-alt">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-eyebrow">05 // Curriculum Vitae</span>
+                    <h2 class="section-title">Consulter &amp; Télécharger mon CV</h2>
+                    <p class="section-desc">
+                        Prévisualisez mon parcours complet directement dans la page ou téléchargez la version PDF prête à imprimer.
+                    </p>
+                </header>
+
+                <div class="cv-layout">
+                    <aside class="tech-card cv-info-card reveal">
+                        <div>
+                            <span class="project-index">DOCUMENT OFFICIEL</span>
+                            <h3 style="font-size: 1.35rem; margin-bottom: 10px;">CV — Mathis Gomes</h3>
+                            <p style="font-size: 0.94rem;">
+                                Profil développeur full-stack &amp; systèmes numériques. Disponible pour un stage de 7 semaines
+                                du <strong>1<sup>er</sup> février au 19 mars 2027</strong>.
+                            </p>
+                        </div>
+
+                        <div class="cv-highlights">
+                            <div class="cv-highlight-item">
+                                <span>Formation</span>
+                                <span>BTS SIO SLAM (Dijon)</span>
+                            </div>
+                            <div class="cv-highlight-item">
+                                <span>Langues</span>
+                                <span>Français (natif) · Anglais (B1)</span>
+                            </div>
+                            <div class="cv-highlight-item">
+                                <span>Certifications</span>
+                                <span>PIX (374) · B1V · ASSR-2</span>
+                            </div>
+                            <div class="cv-highlight-item">
+                                <span>Format</span>
+                                <span>PDF (CV_Mathis_Gomes.pdf)</span>
+                            </div>
+                        </div>
+
+                        <div class="cv-actions">
+                            <a href="assets/docs/CV_Mathis_Gomes.pdf" download="CV_Mathis_Gomes.pdf" class="btn btn-primary">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                <span>Télécharger (PDF)</span>
+                            </a>
+
+                            <button id="cv-open-modal" type="button" class="btn btn-secondary">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <polyline points="9 21 3 21 3 15"></polyline>
+                                    <line x1="21" y1="3" x2="14" y2="10"></line>
+                                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                                </svg>
+                                <span>Plein écran</span>
+                            </button>
+                        </div>
+                    </aside>
+
+                    <div class="cv-preview-frame reveal">
+                        <div class="cv-preview-toolbar">
+                            <span>aperçu_cv_mathis_gomes.jpg</span>
+                            <span>Haute résolution</span>
+                        </div>
+                        <div class="cv-preview-img-wrap">
+                            <img
+                                src="assets/img/CV_Mathis_Gomes_2026.jpg"
+                                alt="Aperçu du Curriculum Vitae de Mathis Gomes"
+                                loading="lazy"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CONTACT -->
+        <section id="contact" class="section">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-eyebrow">06 // Entrer en contact</span>
+                    <h2 class="section-title">Discutons de votre projet ou d’un stage</h2>
+                    <p class="section-desc">
+                        Vous recherchez un stagiaire motivé en BTS SIO SLAM du 1<sup>er</sup> février au 19 mars 2027 ?
+                        Contactez-moi directement par e-mail ou via mes réseaux professionnels.
+                    </p>
+                </header>
+
+                <div class="contact-grid">
+                    <article class="tech-card contact-card reveal">
+                        <div>
+                            <span class="project-index">CONTACT DIRECT</span>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Messagerie directe</h3>
+                            <p style="margin-bottom: 20px;">
+                                Cliquez pour ouvrir votre client mail ou copiez mon adresse en un clic.
+                            </p>
+
+                            <div class="email-box">
+                                <span class="email-address">mathisgomes@proton.me</span>
+                                <button
+                                    id="copy-email-btn"
+                                    type="button"
+                                    class="copy-btn"
+                                    data-email="mathisgomes@proton.me"
+                                    aria-label="Copier l'adresse e-mail mathisgomes@proton.me"
+                                >
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span class="copy-btn-label">Copier</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <a href="mailto:mathisgomes@proton.me?subject=Contact%20depuis%20le%20portfolio" class="btn btn-primary" style="width: 100%;">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <span>Envoyer un e-mail</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="tech-card reveal">
+                        <span class="project-index">RÉSEAUX &amp; COMMUNAUTÉ</span>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 18px;">Me retrouver en ligne</h3>
+
+                        <div class="social-list">
+                            <a href="https://github.com/zzspooks" target="_blank" rel="noopener noreferrer" class="social-link-card">
+                                <div class="social-link-left">
+                                    <div class="social-icon" aria-hidden="true">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="social-name">GitHub</div>
+                                        <div class="social-handle">@zzspooks</div>
+                                    </div>
+                                </div>
+                                <span aria-hidden="true" class="text-accent">↗</span>
+                            </a>
+
+                            <a href="https://linkedin.com/in/mathisgomes" target="_blank" rel="noopener noreferrer" class="social-link-card">
+                                <div class="social-link-left">
+                                    <div class="social-icon" aria-hidden="true">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                            <rect x="2" y="9" width="4" height="12"></rect>
+                                            <circle cx="4" cy="4" r="2"></circle>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="social-name">LinkedIn</div>
+                                        <div class="social-handle">in/mathisgomes</div>
+                                    </div>
+                                </div>
+                                <span aria-hidden="true" class="text-accent">↗</span>
+                            </a>
+
+                            <a href="https://twitch.tv/zzspooks" target="_blank" rel="noopener noreferrer" class="social-link-card">
+                                <div class="social-link-left">
+                                    <div class="social-icon" aria-hidden="true">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 2H3v16h5v4l4-4h5l4-4V2z"></path>
+                                            <line x1="11" y1="7" x2="11" y2="11"></line>
+                                            <line x1="16" y1="7" x2="16" y2="11"></line>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="social-name">Twitch</div>
+                                        <div class="social-handle">@zzspooks</div>
+                                    </div>
+                                </div>
+                                <span aria-hidden="true" class="text-accent">↗</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; 2026 Mathis Gomes — BTS SIO SLAM · Dijon</p>
+            <span class="konami-hint" title="Un secret se cache au clavier...">↑ ↑ ↓ ↓ ← → ← → B A</span>
+        </div>
+    </footer>
+
+    <!-- Toast Notification "Copié !" -->
+    <div id="toast-notification" class="toast" role="status" aria-live="polite">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span id="toast-message">Copié !</span>
+    </div>
+
+    <!-- Modale Easter Egg : Snake (Konami Code) -->
+    <div
+        id="snake-modal"
+        class="modal-backdrop"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="snake-modal-title"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <span class="modal-badge">EASTER EGG</span>
+                    <h2 id="snake-modal-title" class="modal-title">SNAKE // NEON_OS</h2>
+                </div>
+                <button id="snake-close-btn" class="modal-close" type="button" aria-label="Fermer le jeu Snake">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="snake-body">
+                <div class="snake-hud">
+                    <div class="snake-stat">SCORE <strong id="snake-score">0</strong></div>
+                    <div class="snake-stat">RECORD <strong id="snake-highscore">0</strong></div>
+                </div>
+
+                <div class="snake-canvas-wrap">
+                    <canvas id="snake-canvas" width="380" height="380"></canvas>
+                    <div id="snake-overlay" class="snake-overlay">
+                        <div id="snake-overlay-title" class="snake-overlay-title">PAUSE</div>
+                        <p id="snake-overlay-sub" class="snake-overlay-sub"></p>
+                        <button id="snake-action-btn" type="button" class="btn btn-primary">Reprendre</button>
+                    </div>
+                </div>
+
+                <div class="snake-dpad" aria-label="Contrôles directionnels tactiles">
+                    <button type="button" class="dpad-btn dpad-up" data-dir="up" aria-label="Haut">↑</button>
+                    <button type="button" class="dpad-btn dpad-left" data-dir="left" aria-label="Gauche">←</button>
+                    <button type="button" class="dpad-btn dpad-down" data-dir="down" aria-label="Bas">↓</button>
+                    <button type="button" class="dpad-btn dpad-right" data-dir="right" aria-label="Droite">→</button>
+                </div>
+
+                <div class="snake-controls-bar">
+                    <span class="snake-keys-hint">Flèches / ZQSD · Espace : Pause · Échap : Quitter</span>
+                    <button id="snake-pause-btn" type="button" class="btn btn-ghost">Pause</button>
+                </div>
+            </div>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Modale Visionneuse CV Plein Écran -->
+    <div
+        id="cv-modal"
+        class="modal-backdrop"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cv-modal-title"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-cv">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <span class="modal-badge">CV</span>
+                    <h2 id="cv-modal-title" class="modal-title">CV_Mathis_Gomes.pdf</h2>
+                </div>
+                <button id="cv-modal-close" class="modal-close" type="button" aria-label="Fermer l'aperçu du CV">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="cv-modal-body">
+                <img src="assets/img/CV_Mathis_Gomes_2026.jpg" alt="Curriculum Vitae complet de Mathis Gomes">
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts modulaires -->
+    <script src="js/main.js" defer></script>
+    <script src="js/veille-cnil.js" defer></script>
+    <script src="js/contact.js" defer></script>
+    <script src="js/konami-snake.js" defer></script>
 </body>
 </html>

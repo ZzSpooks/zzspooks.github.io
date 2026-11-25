@@ -1,0 +1,276 @@
+/* ==========================================================================
+   Modales — Pop-up Snake (Konami Code) & Visionneuse CV Plein Écran
+   ========================================================================== */
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(3, 5, 9, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity var(--transition-base),
+        visibility var(--transition-base);
+}
+
+.modal-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-dialog {
+    width: 100%;
+    max-width: 480px;
+    background: var(--bg-surface);
+    border: 1px solid rgba(0, 212, 255, 0.45);
+    border-radius: var(--radius-lg);
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.85),
+        0 0 38px -8px rgba(0, 212, 255, 0.45);
+    overflow: hidden;
+    transform: translateY(20px) scale(0.92);
+    opacity: 0;
+    transition:
+        transform 340ms cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 260ms ease;
+}
+
+.modal-backdrop.is-open .modal-dialog {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.modal-dialog.modal-cv {
+    max-width: 820px;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: rgba(6, 8, 13, 0.8);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.modal-title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    background: var(--accent-cyan-soft);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(0, 212, 255, 0.35);
+}
+
+.modal-title {
+    font-size: 0.98rem;
+    font-family: var(--font-mono);
+}
+
+.modal-close {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    border: 1px solid transparent;
+    transition: color var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.modal-close:hover {
+    color: var(--accent-cyan);
+    border-color: var(--border-medium);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Snake Pop-up Body */
+.snake-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.snake-hud {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+}
+
+.snake-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+}
+
+.snake-stat strong {
+    color: var(--accent-cyan);
+    font-size: 0.98rem;
+}
+
+.snake-canvas-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    background: #05070c;
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    box-shadow: inset 0 0 24px rgba(0, 212, 255, 0.08);
+}
+
+#snake-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.snake-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    text-align: center;
+    background: rgba(6, 8, 13, 0.84);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fast);
+}
+
+.snake-overlay.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.snake-overlay-title {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    color: var(--accent-cyan);
+}
+
+.snake-overlay-title.is-gameover {
+    color: var(--status-error);
+}
+
+.snake-overlay-sub {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.snake-controls-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.snake-keys-hint {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--text-muted);
+}
+
+.snake-dpad {
+    display: none;
+    grid-template-columns: repeat(3, 44px);
+    grid-template-rows: repeat(2, 44px);
+    gap: 6px;
+}
+
+.dpad-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-medium);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.dpad-btn:active {
+    background: var(--accent-cyan-soft);
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+}
+
+.dpad-up {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.dpad-left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.dpad-down {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.dpad-right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+@media (hover: none), (max-width: 640px) {
+    .snake-dpad {
+        display: grid;
+    }
+}
+
+/* Visionneuse CV Modale */
+.cv-modal-body {
+    padding: 16px;
+    overflow-y: auto;
+    background: #080b12;
+}
+
+.cv-modal-body img {
+    width: 100%;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-subtle);
+}
